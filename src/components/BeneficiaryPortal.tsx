@@ -86,29 +86,8 @@ export const BeneficiaryPortal: React.FC<BeneficiaryPortalProps> = ({
     showToast('All past voice check-in telemetry and sentiment scores purged. Legal FIR record preserved.');
   };
 
-  const handleSendSimulatedReflection = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!activeCase) return;
-    therapyModelService.ingestExternalScore(
-      activeCase.id,
-      reflectionScore,
-      undefined,
-      {
-        sourceProject: 'LOCAL_PC_JOURNALING_COMPANION',
-        journalSnippet: reflectionText || 'Beneficiary completed private personal diary entry on local PC.',
-        detectedIndicators: ['Private Journal Reflection (Local PC)', 'Self-Reported Emotional State'],
-        recommendedInterventions: [
-          reflectionScore >= 75
-            ? 'Urgent caseworker review: High distress detected from local reflection'
-            : 'Continue routine scheduled contact',
-        ],
-      }
-    );
-    showToast(
-      `Distress score (${reflectionScore}/100) synced to caseworker. Your intimate diary remains safely private on your PC.`
-    );
-    setReflectionText('');
-  };
+
+
 
   const handleToggleConsent = () => {
     if (!activeCase) return;
