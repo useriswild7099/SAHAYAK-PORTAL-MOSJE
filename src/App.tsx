@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, PortalRole, AdminViewType, VictimViewType } from './components/Navbar';
 import { CaseworkerQueue } from './components/CaseworkerQueue';
-import { IVRPhoneSimulator } from './components/IVRPhoneSimulator';
 import { BeneficiaryPortal } from './components/BeneficiaryPortal';
 import { CompanionIntegrationView } from './components/CompanionIntegrationView';
 import { EthicalCharterModal } from './components/EthicalCharterModal';
@@ -173,17 +172,6 @@ function AppContent() {
               />
             )}
 
-            {adminView === 'telephony' && (
-              <IVRPhoneSimulator
-                cases={cases}
-                selectedCaseId={selectedCaseForPhoneId}
-                onCaseChange={(id) => {
-                  setSelectedCaseForPhoneId(id);
-                  setActiveVictimCaseId(id);
-                }}
-              />
-            )}
-
             {adminView === 'companion_hub' && (
               <CompanionIntegrationView
                 cases={cases}
@@ -205,7 +193,6 @@ function AppContent() {
               setActiveVictimCaseId(id);
               setSelectedCaseForPhoneId(id);
             }}
-            onOpenPhoneWithCase={handleOpenPhoneWithCase}
             activeTab={victimView}
             onTabChange={setVictimView}
           />

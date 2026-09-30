@@ -304,21 +304,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </select>
           </div>
 
-          <button
-            onClick={() => {
-              if (portalRole === 'victim') {
-                onOpenPhoneWithCase();
-              } else {
-                onSelectAdminView('telephony');
-                onOpenPhoneWithCase();
-              }
-            }}
-            className="px-3 py-1 text-xs font-semibold rounded bg-[#0B2545] hover:bg-[#12335C] text-white transition-colors flex items-center gap-1.5 border border-[#0B2545]"
-          >
-            <PhoneForwarded className="w-3.5 h-3.5 text-amber-300" />
-            <span className="hidden sm:inline">Telephony Simulator</span>
-            <span className="sm:hidden">IVR</span>
-          </button>
+
         </div>
       </div>
 
@@ -344,17 +330,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 )}
               </button>
 
-              <button
-                onClick={() => onSelectAdminView('telephony')}
-                className={`px-3 py-1 rounded-sm text-xs flex items-center gap-1.5 whitespace-nowrap transition-colors ${
-                  adminView === 'telephony'
-                    ? 'bg-white text-slate-900 border border-slate-300 font-bold shadow-xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/70 font-medium'
-                }`}
-              >
-                <PhoneCall className="w-3.5 h-3.5 text-slate-700" />
-                <span>Telephony Gateway</span>
-              </button>
+
 
               <button
                 onClick={() => onSelectAdminView('companion_hub')}
@@ -427,17 +403,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>3. Case Ledger (DPDP Act)</span>
               </button>
 
-              <button
-                onClick={() => onSelectVictimView('phone')}
-                className={`px-3 py-1 rounded-sm text-xs flex items-center gap-1.5 whitespace-nowrap transition-colors ${
-                  victimView === 'phone'
-                    ? 'bg-white text-emerald-950 border border-emerald-300 font-bold shadow-xs'
-                    : 'text-emerald-900 hover:text-emerald-950 hover:bg-emerald-100/60 font-medium'
-                }`}
-              >
-                <Phone className="w-3.5 h-3.5 text-emerald-700" />
-                <span>4. Feature-Phone Terminal</span>
-              </button>
+
 
               <button
                 onClick={() => onSelectVictimView('companion')}

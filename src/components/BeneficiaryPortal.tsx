@@ -26,7 +26,7 @@ import {
 import { AtrocityCase, CheckInRecord, LanguageCode, SUPPORTED_LANGUAGES } from '../types/ivr';
 import { storageService } from '../services/storageService';
 import { therapyModelService } from '../services/therapyModelService';
-import { IVRPhoneSimulator } from './IVRPhoneSimulator';
+
 import { LiquidGlassContainer } from './liquid-glass/LiquidGlassContainer';
 import { LiquidGlassButton } from './liquid-glass/LiquidGlassButton';
 
@@ -56,8 +56,6 @@ export const BeneficiaryPortal: React.FC<BeneficiaryPortalProps> = ({
     onTabChange?.(tab);
   };
   const [successToast, setSuccessToast] = useState<string | null>(null);
-  const [reflectionText, setReflectionText] = useState<string>('');
-  const [reflectionScore, setReflectionScore] = useState<number>(65);
   const [showPurgeModal, setShowPurgeModal] = useState<boolean>(false);
 
   const activeCase = cases.find((c) => c.id === activeCaseId) || cases[0];
@@ -577,16 +575,7 @@ export const BeneficiaryPortal: React.FC<BeneficiaryPortalProps> = ({
             </LiquidGlassContainer>
           )}
 
-          {/* TAB 4: Feature-Phone IVR Terminal */}
-          {activeTab === 'phone' && (
-            <div>
-              <IVRPhoneSimulator
-                cases={cases}
-                selectedCaseId={activeCase.id}
-                onCaseChange={onCaseChange}
-              />
-            </div>
-          )}
+
 
           {/* TAB 5: Companion (Chatbot & Journaling Connector) */}
           {activeTab === 'companion' && (
