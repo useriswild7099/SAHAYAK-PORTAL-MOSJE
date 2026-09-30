@@ -1,0 +1,7 @@
+{
+  "name": "MoSJE Sahayak — Multilingual IVR Case Continuity & Support",
+  "description": "Ethical, consent-driven multilingual IVR check-in service and caseworker continuity platform for MoSJE victim assistance. Features self-reported status updates, audio synthesis, DTMF simulation, and district casework triage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
